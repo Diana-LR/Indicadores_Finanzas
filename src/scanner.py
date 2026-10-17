@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 
 # Importamos nuestro motor matemático
-from indicators import (
+from .indicators import (
     calcular_medias_moviles, calcular_bollinger, calcular_estocastico,
     calcular_obv, calcular_macd, calcular_adx, calcular_rsi, calcular_parabolic_sar
 )
