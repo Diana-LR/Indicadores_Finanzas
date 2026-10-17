@@ -58,6 +58,10 @@ activos_disponibles = ["AAPL", "MSFT", "NVDA", "AMZN", "META", "TSLA", "BTC-USD"
 if not df_scanner.empty and "Activo" in df_scanner.columns:
     activos_disponibles = df_scanner["Activo"].tolist()
 
+# Estas dos líneas van fuera del if
+st.sidebar.write("Activos del JSON:", df_scanner["Activo"].tolist() if "Activo" in df_scanner.columns else "No existe la columna Activo")
+st.sidebar.write("¿Está WALMEX?:", "WALMEX.MX" in activos_disponibles)
+
 activo_seleccionado = st.sidebar.selectbox("🎯 Selección de Activo", activos_disponibles)
 periodo = st.sidebar.select_slider("⏱ Período Histórico", options=["6mo", "1y", "2y", "4y"], value="1y")
 
